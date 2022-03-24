@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+              font-size: calc(1rem + 1vw);
+                background: rgb(224,70,0);
+                color: white
+                font-family: 'Lato', sans-serif;
+                font-weight:300;
+                font-style:italic
+            }
+            div {
+                padding: 2rem;
+            }
+            h1{
+                font-size: calc(2rem + 10vw);
+              font-weight:900;
+              padding: 0 0 1.5rem 0;
+              color: brown
+
+            }
+            h1 span#nombre{
+              text-decoration: underline;
+            }
+            p {
+                padding: 1rem 0 0 0;
+            }
+            @media (min-width: 800px) {
+                p {
+                    max-width: 60%;
+                }
+            }
+        </style>
+        <title>Kindness</title>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+            integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+    <body>
+        <div>
+            <h1><span id="saludo"></span> Me llamo <span id="nombre"></span></h1>
+            <p>La razón por la que tomé el ramo es porque siempre me ha parecido que la programación es como hacer magia, no la entiendo (y por eso estoy acá) pero me parece fascinante!</p>
+            <p>Vine a la segunda clase porque me gusta aprender esto y también porque me siento cada vez con más preguntas jeje.</p>
+        </div>
+        <script>
+          var opciones = ["Hola.", "Jelou.", "Konnichiwa.", "ola de saludo no de mar.", "Hello, sunshine.", "How's it going?"];
+            function setup() {
+                createCanvas(windowWidth - 40, windowHeight - 40)
+                    .position(20, 20)
+                    .style("z-index", -1);
+                document.getElementById("nombre").textContent += "Mayimagenta";
+                  document.getElementById("saludo").textContent += random(opciones);
+            }
+            function draw() {
+                background(254,80,0);
+                textSize(100);
+                text("💖",mouseX,mouseY);
+                fill(20);
+                ellipse(mouseX+50,mouseY+50, 90, 10)
+            }
+            function windowResized() {
+                resizeCanvas(windowWidth - 40, windowHeight - 40);
+            }
+        </script>
+    </body>
+</html>
